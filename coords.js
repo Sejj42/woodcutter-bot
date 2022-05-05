@@ -1,4 +1,12 @@
+const robot = require("robotjs");
+
+const screenSize = robot.getScreenSize();
+
 const coords = {
+  playerDefault: {
+    x: screenSize.width / 2,
+    y: screenSize.height / 2,
+  },
   mySpot: {
     x: 935,
     y: 527,
@@ -24,8 +32,12 @@ const coords = {
     y: 165,
   },
   teak: {
-    x: 825,
-    y: 410,
+    x: screenSize.width / 2 + 55,
+    y: screenSize.height / 2 - 25,
+  },
+  firstInvItem: {
+    x: 1368,
+    y: 533,
   },
 };
 

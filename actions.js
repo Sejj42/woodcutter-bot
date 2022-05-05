@@ -1,35 +1,66 @@
-const util = require("./util");
-const coords = require("./coords");
+const robot = require("robotjs");
+const { moveMouseAndClick, sleep } = require("./util");
+const {
+  mySpot,
+  firstTree,
+  secondTree,
+  bank,
+  deposit,
+  teak,
+  firstInvItem,
+} = require("./coords");
 
 const actions = {
   goBackToSpot: (ms) => {
-    util.moveMouseAndClick(coords.mySpot.x, coords.mySpot.y);
-    util.sleep(ms);
+    moveMouseAndClick(mySpot.x, mySpot.y);
+    sleep(ms);
   },
 
   chopFirstTree: (ms) => {
-    util.moveMouseAndClick(coords.firstTree.x, coords.firstTree.y);
-    util.sleep(ms);
+    moveMouseAndClick(firstTree.x, firstTree.y);
+    sleep(ms);
   },
   chopSecondTree: (ms) => {
-    util.moveMouseAndClick(coords.secondTree.x, coords.secondTree.y);
-    util.sleep(ms);
+    moveMouseAndClick(secondTree.x, secondTree.y);
+    sleep(ms);
   },
 
   openBank: (ms) => {
-    util.moveMouseAndClick(coords.bank.x, coords.bank.y);
-    util.sleep(ms);
+    moveMouseAndClick(bank.x, bank.y);
+    sleep(ms);
   },
 
   depositLogs: (ms) => {
-    util.moveMouseAndClick(coords.deposit.x, coords.deposit.y);
-    util.sleep(ms);
+    moveMouseAndClick(deposit.x, deposit.y);
+    sleep(ms);
   },
 
   chopTeak: (ms) => {
-    util.moveMouseAndClick(coords.teak.x, coords.teak.y);
-    util.sleep(ms);
+    moveMouseAndClick(teak.x, teak.y);
+    sleep(ms);
   },
+  dropFullInv: (ms) => {
+    let x = firstInvItem.x;
+    let y = firstInvItem.y;
+    for (let i = 0; i < 4; i++) {
+      dropInvColumn(x, y, ms);
+      x += 43.5;
+    }
+  },
+};
+
+const dropInvColumn = (x, y, ms) => {
+  for (let i = 0; i < 7; i++) {
+    robot.moveMouse(x, y);
+    robot.mouseClick("right");
+    sleep(ms);
+    if (i === 6) robot.moveMouse(x, y + 25);
+    else robot.moveMouse(x, y + 40);
+    sleep(ms);
+    robot.mouseClick();
+    sleep(ms + 500);
+    y += 36;
+  }
 };
 
 module.exports = actions;

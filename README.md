@@ -1,14 +1,13 @@
 # DISCLAIMER:
-
-This bot is ONLY used for educational purposes. Please do not attempt to use this on live servers as it is considered cheating and you will probably be banned.
+This bot was created for educational purposes ONLY. Please do not attempt to use it on live servers as it is considered cheating and will get you banned.
 
 ## General Notes
-
-- Default location: Make sure your toon is placed in between the two willow trees in Draynor and are sufficiently zoomed out.
-- You may change the coords in the coords.js file to match a different surrounding with different trees.
-- Bot is designed to drop logs once inventory is full, but I might add a banking option in the future.
+- The bot currently supports two locations: Draynor and the single Teak tree SW of Castle Wars. Change the argument given to the main function from the default teak to willow if needed.
+- Default positions: 
+    Teaks: square left of the tree. Willows: square between the two willows closest to the bank. 
+- Teak mode chops & drops while willows chops & banks.
 
 ## Make sure you:
 
 - Have node.js installed on your machine.
-- Coords are based on a 1920\*1080 resolution screen. If you are using a different resolution, check for new coordinates (you can print screen and use Paint to view coords) and adjust the default ones accordingly.
+- Coords are based on a 1536*864 resolution screen. If you are using a different resolution, you may want to adjust certain coordinates accordingly.

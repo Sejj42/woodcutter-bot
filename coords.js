@@ -23,6 +23,10 @@ const coords = {
     x: 1000,
     y: 165,
   },
+  teak: {
+    x: 825,
+    y: 410,
+  },
 };
 
 module.exports = coords;

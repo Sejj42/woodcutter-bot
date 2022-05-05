@@ -1,4 +1,5 @@
 const util = require("./util");
+const coords = require("./coords");
 
 const actions = {
   goBackToSpot: (ms) => {
@@ -22,6 +23,11 @@ const actions = {
 
   depositLogs: (ms) => {
     util.moveMouseAndClick(coords.deposit.x, coords.deposit.y);
+    util.sleep(ms);
+  },
+
+  chopTeak: (ms) => {
+    util.moveMouseAndClick(coords.teak.x, coords.teak.y);
     util.sleep(ms);
   },
 };

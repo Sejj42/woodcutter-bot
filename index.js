@@ -1,9 +1,5 @@
-const robot = require("robotjs");
-const coords = require("./coords");
 const actions = require("./actions");
-
-console.log(coords.mySpot.x);
-console.log(util.util.moveMouseAndClick);
+const util = require("./util");
 
 const main = () => {
   console.log("Starting...");
@@ -18,4 +14,11 @@ const main = () => {
   }
 };
 
+const mainTeak = () => {
+  console.log("Starting...");
+  util.sleep(3000);
+  actions.chopTeak(15000);
+};
+
 // main();
+mainTeak();

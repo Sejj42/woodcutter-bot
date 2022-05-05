@@ -1,3 +1,4 @@
+const robot = require("robotjs");
 const util = {
   moveMouseAndClick: (x, y) => {
     robot.moveMouse(x, y);
